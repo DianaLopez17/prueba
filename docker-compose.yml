@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  springboot-app:
+    image: autos  # Nombre de la imagen de tu microservicio Spring Boot
+    container_name: citas
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@host.docker.internal:1521/XE
+      - SPRING_DATASOURCE_USERNAME=system
+      - SPRING_DATASOURCE_PASSWORD=12345
+    ports:
+      - "9005:9005"  # Puerto para acceder al microservicio
